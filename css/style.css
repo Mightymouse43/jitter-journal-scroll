@@ -517,4 +517,11 @@ canvas {
 
   .hero-standalone { padding: 0 6vw; }
   .hero-heading { font-size: clamp(5rem, 22vw, 10rem); }
+
+  .hero-overlay { padding: 0 6vw; }
+  .hero-scroll-indicator { left: 6vw; }
+
+  .stats-grid { flex-direction: column; align-items: center; }
+
+  .cta-button { width: 100%; justify-content: center; }
 }
