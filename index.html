@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jitter Journal — Your Caffeine Habit, Exposed</title>
+  <meta name="description" content="Track your caffeine. Get roasted. Know yourself." />
+  <link rel="icon" href="https://raw.githubusercontent.com/google/material-design-icons/master/png/maps/local_cafe/materialicons/48dp/2x/baseline_local_cafe_black_48dp.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-brand">JITTER JOURNAL</div>
+    <div class="loader-track">
+      <div id="loader-bar"></div>
+    </div>
+    <div id="loader-percent">0%</div>
+  </div>
+
+  <!-- Fixed Header -->
+  <header class="site-header">
+    <nav>
+      <span class="nav-logo">JITTER JOURNAL</span>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#download" class="nav-cta">Download</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero overlay (fixed, fades as scroll begins) -->
+  <div id="hero-overlay" class="hero-overlay">
+    <div class="hero-content">
+      <span class="section-label">Caffeine Tracker</span>
+      <h1 class="hero-heading">
+        <span class="hero-word">JITTER</span>
+        <span class="hero-word accent">JOURNAL</span>
+      </h1>
+      <p class="hero-tagline">Your caffeine habit, <em>exposed.</em></p>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll to explore</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Canvas (fixed, full viewport) -->
+  <div class="canvas-wrap" id="canvas-wrap">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <!-- Dark overlay (fixed) -->
+  <div id="dark-overlay"></div>
+
+  <!-- Marquee (fixed) -->
+  <div class="marquee-wrap" id="marquee" data-scroll-speed="-22">
+    <div class="marquee-text">
+      TRACK IT &nbsp;·&nbsp; GET ROASTED &nbsp;·&nbsp; OWN IT &nbsp;·&nbsp;
+      TRACK IT &nbsp;·&nbsp; GET ROASTED &nbsp;·&nbsp; OWN IT &nbsp;·&nbsp;
+      TRACK IT &nbsp;·&nbsp; GET ROASTED &nbsp;·&nbsp; OWN IT &nbsp;·&nbsp;
+    </div>
+  </div>
+
+  <!-- Scroll Container (900vh) -->
+  <div id="scroll-container">
+
+    <!-- Section 1: Log Every Sip -->
+    <section id="features" class="scroll-section align-left"
+             data-enter="5" data-leave="20" data-animation="slide-left">
+      <div class="section-inner">
+        <span class="section-label">001 / Logging</span>
+        <h2 class="section-heading">LOG EVERY<br><span class="accent">SIP.</span></h2>
+        <p class="section-body">Every drink tracked — espresso shots, energy drinks, that 11pm cold brew — down to the milligram.</p>
+        <p class="section-note">Because you can't fix what you can't measure.</p>
+      </div>
+    </section>
+
+    <!-- Section 2: Get Roasted -->
+    <section class="scroll-section align-left"
+             data-enter="22" data-leave="37" data-animation="slide-left">
+      <div class="section-inner">
+        <span class="section-label">002 / AI Roasts</span>
+        <h2 class="section-heading">GET<br><span class="accent">ROASTED.</span></h2>
+        <p class="section-body">Personalized AI commentary on your most questionable caffeine decisions. Brutally honest. Surprisingly accurate.</p>
+        <p class="section-note">Accountability hits different when it's funny.</p>
+      </div>
+    </section>
+
+    <!-- Section 3: Know Yourself -->
+    <section class="scroll-section align-left"
+             data-enter="38" data-leave="51" data-animation="scale-up">
+      <div class="section-inner">
+        <span class="section-label">003 / Insights</span>
+        <h2 class="section-heading">KNOW<br><span class="accent">YOURSELF.</span></h2>
+        <p class="section-body">See exactly how caffeine shapes your sleep, energy, and daily patterns. Track the chaos. Find the signal.</p>
+        <p class="section-note">Your habit, visualized.</p>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="scroll-section section-stats"
+             data-enter="58" data-leave="75" data-animation="stagger-up">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-row">
+            <span class="stat-number" data-value="400" data-decimals="0">0</span>
+            <span class="stat-suffix">mg</span>
+          </div>
+          <span class="stat-label">the daily amount most people underestimate</span>
+        </div>
+        <div class="stat">
+          <div class="stat-row">
+            <span class="stat-number" data-value="6" data-decimals="0">0</span>
+            <span class="stat-suffix">hrs</span>
+          </div>
+          <span class="stat-label">caffeine half-life disrupting your sleep</span>
+        </div>
+        <div class="stat">
+          <div class="stat-row">
+            <span class="stat-number" data-value="0" data-decimals="0">0</span>
+            <span class="stat-suffix">judgment</span>
+          </div>
+          <span class="stat-label">just roasts</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="download" class="scroll-section align-left"
+             data-enter="72" data-leave="100" data-animation="fade-up" data-persist="true">
+      <div class="section-inner">
+        <span class="section-label">004 / Download</span>
+        <h2 class="section-heading">READY TO<br>OWN YOUR<br><span class="accent">HABIT?</span></h2>
+        <p class="section-body">Your caffeine. Your chaos. Your choice.</p>
+        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="cta-button">
+          <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          Download on the App Store
+        </a>
+      </div>
+    </section>
+
+  </div><!-- end scroll-container -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">JITTER JOURNAL</span>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="mailto:automind.ai43@gmail.com">Contact</a>
+      </div>
+      <span class="footer-copy">© 2025 Jitter Journal. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
