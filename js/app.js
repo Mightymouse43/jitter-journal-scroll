@@ -251,14 +251,15 @@ function initScrollDriver() {
         if (!entry) return;
 
         const { tl, played } = entry;
-        const inRange = p >= enter && (persist || p <= leave);
+        const isMobile = window.innerWidth < 768;
+        const inRange = p >= enter && (persist || isMobile || p <= leave);
 
         if (inRange && !played) {
           gsap.set(section, { opacity: 1 });
           section.classList.add('visible');
           tl.play();
           sectionTimelines.set(section, { tl, played: true });
-        } else if (!inRange && !persist && played) {
+        } else if (!inRange && !persist && !isMobile && played) {
           tl.reverse();
           section.classList.remove('visible');
           gsap.to(section, { opacity: 0, duration: 0.3 });

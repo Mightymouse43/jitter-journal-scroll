@@ -524,4 +524,6 @@ canvas {
   .stats-grid { flex-direction: column; align-items: center; }
 
   .cta-button { width: 100%; justify-content: center; }
+
+  #download .section-inner { padding-bottom: 80px; }
 }
